@@ -1,0 +1,10 @@
+@charset "ISO-8859-1";
+
+@font-face {
+    font-family: 'Abril'; /*a name to be used later*/
+    src: url('..\fonts\AbrilFatface-Regular.ttf'); /*URL to font*/
+}
+
+body {
+	color: rgba( 0,0,0 , 0.65);
+}
