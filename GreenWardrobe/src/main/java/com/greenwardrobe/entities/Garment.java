@@ -9,15 +9,12 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "customer")
-public class Customer {
+@Table(name = "garment")
+public class Garment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int cId;
-	private String fName;
-	private String lName;
-	private String address;
-	private String phoneNumber;
-	private String email;
-	private String password;
+	private int gId;
+	private String name;
+	private String brand;
+	private String condition;
 }

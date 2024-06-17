@@ -9,15 +9,11 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "customer")
-public class Customer {
+@Table(name = "sale")
+public class Sale {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int cId;
-	private String fName;
-	private String lName;
-	private String address;
-	private String phoneNumber;
-	private String email;
-	private String password;
+	private int sId;
+	private String name;
+	private String brand;
 }
