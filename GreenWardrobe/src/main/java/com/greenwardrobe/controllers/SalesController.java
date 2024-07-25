@@ -34,7 +34,7 @@ public class SalesController {
 		modelAndView.addObject("name", sale.getName());
 		modelAndView.addObject("brand", sale.getBrand());
 
-		modelAndView.setViewName("views\\saleSuccess.jsp");
+		modelAndView.setViewName("/views/saleSuccess.jsp");
 
 		return modelAndView;
 	}

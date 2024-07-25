@@ -17,7 +17,7 @@
 						</div>
 						<div class="mb-3">
 							<label for="brand" class="form-label"><i
-								class="fa fa-key"></i> Password</label> <input type="text"
+								class="fa fa-key"></i> Password</label> <input type="password"
 								class="form-control" id="password" name="password">
 						</div>
 						<div class="mb-3 w-100" style="text-align: center">
@@ -31,8 +31,4 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/jQuery.js"></script>
-
-</body>
-</html>
+	<%@include file="layouts/footer.jsp"%>

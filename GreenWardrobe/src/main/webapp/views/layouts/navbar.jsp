@@ -1,3 +1,7 @@
+<%@page import="org.hibernate.internal.build.AllowSysOut"%>
+<%@ page import="java.util.List"%>
+<%@ page import="jakarta.servlet.http.HttpSession"%>
+<%@ page import="jakarta.servlet.http.HttpServletRequest"%>
 <div class="col-12" style="text-align: center;">
 	<img src="../images/logos/GW Logo Lina new.jpg" />
 </div>
@@ -20,6 +24,22 @@
 							</li>
 							<li class="nav-item"><a class="nav-link" href="/sell">Sell</a>
 							</li>
+							<%
+							if (request.getSession().getAttribute("role") != null) {
+								String role = (String) (request.getSession().getAttribute("role"));
+								System.out.println("role is: " + role);
+								if ("Admin".equalsIgnoreCase(role)) {
+							%>
+							<li class="nav-item">
+								<form id="form1" action="/Approve" method="post">
+									<a class="nav-link" href="#"
+										onclick="document.getElementById('form1').submit();">Approve</a>
+								</form>
+							</li>
+							<%
+							}
+							}
+							%>
 						</ul>
 					</div>
 				</div>
@@ -27,8 +47,33 @@
 		</header>
 	</div>
 	<div class="col-2 mt-3" style="text-align: center;">
+		<%
+		String userName = (String) (request.getSession().getAttribute("userName"));
+		if (userName == null) {
+		%>
 		<a href="/login" class="text-decoration-none"> <i
 			class="fa fa-user-circle" style="font-size: 20px"></i> Log in
 		</a>
+		<%
+		} else {
+		%>
+		<div class="dropdown">
+			<button class="btn btn-primary dropdown-toggle" type="button"
+				id="dropdownMenuButton1" data-bs-toggle="dropdown"
+				aria-expanded="false">
+				<i class="fa fa-user-circle" style="font-size: 20px"></i>
+				<%=userName%>
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+				<li><a class="dropdown-item" href="#">Profile</a></li>
+				<li><form id="form2" action="/logout" method="post">
+						<a class="dropdown-item" href="#"
+							onclick="document.getElementById('form2').submit();">Logout</a>
+					</form></li>
+			</ul>
+		</div>
+		<%
+		}
+		%>
 	</div>
-	</div>
+</div>

@@ -21,7 +21,7 @@ public class CustomerController {
 	
 	@GetMapping("sell")
 	public String sell() {
-		return "views\\sell.jsp";
+		return "/views/sell.jsp";
 	}
 	
 	@PostMapping("sellProcess")
@@ -40,7 +40,7 @@ public class CustomerController {
 		modelAndView.addObject("brand", request.getParameter("brand"));
 		modelAndView.addObject("condition", request.getParameter("condition"));
 
-		modelAndView.setViewName("views\\\\sellRequested.jsp");
+		modelAndView.setViewName("/views/sellRequested.jsp");
 		
 		return modelAndView;
 	}

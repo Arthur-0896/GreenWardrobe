@@ -9,5 +9,4 @@
 			</h5>
 	</div>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-</body>
-</html>
+	<%@include file="layouts/footer.jsp"%>
