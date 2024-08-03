@@ -9,7 +9,7 @@
 			<div class="card-body">
 				<h5 class="card-title">Please Enter the item details</h5>
 				<div class="card-text">
-					<form action="/sellProcess" method="post">
+					<form action="/Sell" method="post" enctype="multipart/form-data">
 						<div class="mb-3">
 							<label for="name" class="form-label">Garment name</label> <input
 								type="text" class="form-control" id="name" name="name">
@@ -23,11 +23,20 @@
 								type="text" class="form-control" id="condition" name="condition">
 						</div>
 						<div class="mb-3">
-							<label for="image" class="form-label">Images</label> <input
-								type="file" class="form-control" id="image" name="image" multiple="multiple">
-							<div id="emailHelp" class="form-text alert alert-primary"><i
-								class="fa fa-info-circle" ></i> Please
-								upload images of the front and back side of the garment</div>
+							<label for="image" class="form-label">Front Image</label> <input
+								type="file" class="form-control" id="frontImage" name="frontImage">
+							<div id="emailHelp" class="form-text alert alert-primary">
+								<i class="fa fa-info-circle"></i> Please upload an image of 
+								the Front side of the Garment
+							</div>
+						</div>
+						<div class="mb-3">
+							<label for="image" class="form-label">Back Image</label> <input
+								type="file" class="form-control" id="backImage" name="backImage">
+							<div id="emailHelp" class="form-text alert alert-primary">
+								<i class="fa fa-info-circle"></i> Please upload an image of 
+								the Back side of the Garment
+							</div>
 						</div>
 						<div class="mb-3 w-100" style="text-align: center">
 							<button type="submit" class="btn btn-primary">Submit</button>

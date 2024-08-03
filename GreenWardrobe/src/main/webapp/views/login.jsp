@@ -10,6 +10,19 @@
 				<h5 class="card-title" style="text-align: center">Login</h5>
 				<div class="card-text">
 					<form action="/loginProcess" method="post">
+						<%
+						if (request.getSession().getAttribute("loginRequired") != null
+								&& (true == (boolean) (request.getSession().getAttribute("loginRequired")))) {
+						%>
+						<div class="mb-3">
+							<div class="alert alert-danger" role="alert">
+								<i class="fa fa-info-circle"></i> Please login to Buy or Sell
+								clothes
+							</div>
+						</div>
+						<%
+						}
+						%>
 						<div class="mb-3">
 							<label for="name" class="form-label"><i
 								class="fa fa-envelope"></i> Email Id</label><input type="email"

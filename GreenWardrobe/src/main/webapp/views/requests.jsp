@@ -16,7 +16,7 @@
 					<td class="bg-success text-white text-center">Condition</td>
 					<td class="bg-success text-white text-center">Item name</td>
 					<td class="bg-success text-white text-center">Images</td>
-					<td class="bg-success text-white text-center">Action</td>
+					<td class="bg-success text-white text-center">Status</td>
 			</thead>
 			<tbody>
 				<%
@@ -34,16 +34,10 @@
 						class="img-thumbnail rounded"
 						src="http://127.0.0.1:8081/<%=garment.getBackImagepath()%>"
 						alt="clothing_image" width="150px" height="200px" /></td>
-					<td class="text-center">
-						<form id="formApprove<%=garment.getGId()%>"
-							action="/ApproveProcess/<%=garment.getGId()%>" method="post">
-						</form>
-						<form id="formReject<%=garment.getGId()%>"
-							action="/RejectProcess/<%=garment.getGId()%>" method="post">
-						</form> <a href="#"
-						onclick="document.getElementById('formApprove<%=garment.getGId()%>').submit();">Approve</a>
-						| <a href="#"
-						onclick="document.getElementById('formReject<%=garment.getGId()%>').submit();">Reject</a>
+					<td
+						class="text-center <%=garment.getStatus().equals("Approved") ? "text-success" : "text-primary"%>">
+						<b><%=garment.getStatus()%></b>&nbsp; <i
+						class="fa <%=garment.getStatus().equals("Approved") ? "fa-check-circle" : "fa-hourglass-start"%>"></i>
 					</td>
 				</tr>
 				<%

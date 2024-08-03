@@ -34,18 +34,25 @@
 								type="text" class="form-control" id="condition" name="condition"
 								value="${condition}" readonly="readonly">
 						</div>
-						<!-- <div class="mb-3">
-							<label for="image" class="form-label">Images</label> <input
-								type="file" class="form-control" id="image" name="image"
-								multiple="multiple">
+						<div class="mb-3">
+							<label for="image" class="form-label">Front Images</label> <input
+								type="file" class="form-control" id="frontImage" name="frontImage">
 							<div id="emailHelp" class="form-text alert alert-primary">
-								<i class="fa fa-info-circle"></i> Please upload images of the
-								front and back side of the garment
+								<i class="fa fa-info-circle"></i> Please upload an image of 
+								the Front side of the Garment
+							</div>
+						</div>
+						<div class="mb-3">
+							<label for="image" class="form-label">Front Images</label> <input
+								type="file" class="form-control" id="backImage" name="backImage">
+							<div id="emailHelp" class="form-text alert alert-primary">
+								<i class="fa fa-info-circle"></i> Please upload an image of 
+								the Back side of the Garment
 							</div>
 						</div>
 						<div class="mb-3 w-100" style="text-align: center">
 							<button type="submit" class="btn btn-primary">Submit</button>
-						</div> -->
+						</div>
 					</form>
 				</div>
 			</div>

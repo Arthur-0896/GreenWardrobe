@@ -20,15 +20,28 @@
 							</li>
 							<li class="nav-item"><a class="nav-link" href="#">Pricing</a>
 							</li>
+							<%
+							String role = "";
+							if (request.getSession().getAttribute("role") != null) {
+								role = (String) (request.getSession().getAttribute("role"));
+							}
+							if (!"Admin".equalsIgnoreCase(role) || "".equals(role)) {
+							%>
 							<li class="nav-item"><a class="nav-link" href="/buy">Buy</a>
 							</li>
-							<li class="nav-item"><a class="nav-link" href="/sell">Sell</a>
+							<li class="nav-item"><a class="nav-link" href="/Sell">Sell</a>
 							</li>
 							<%
-							if (request.getSession().getAttribute("role") != null) {
-								String role = (String) (request.getSession().getAttribute("role"));
-								System.out.println("role is: " + role);
-								if ("Admin".equalsIgnoreCase(role)) {
+							}
+							%>
+							<%
+							 if("Customer".equals(role)) {
+							%>
+							<li class="nav-item"><a class="nav-link text-primary" href="/Requests">My Requests</a>
+							</li>
+							<% } %>
+							<%
+							if ("Admin".equalsIgnoreCase(role)) {
 							%>
 							<li class="nav-item">
 								<form id="form1" action="/Approve" method="post">
@@ -37,7 +50,6 @@
 								</form>
 							</li>
 							<%
-							}
 							}
 							%>
 						</ul>

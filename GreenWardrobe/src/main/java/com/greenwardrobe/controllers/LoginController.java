@@ -24,17 +24,18 @@ public class LoginController {
 	}
 
 	@PostMapping("loginProcess")
-	public String loginProcess(HttpServletRequest request, HttpServletResponse response) {
+	public String loginProcess(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
 		String userName = request.getParameter("email");
 		String passString = request.getParameter("password");
 
 		Customer customer = cusRepository.findByEmail(userName).get(0);
-
+		session.setAttribute("customer", customer);
+		
 		if (customer != null) {
 			if (customer.getPassword().equals(passString)) {
-				HttpSession session = request.getSession();
 				session.setAttribute("userName", customer.getFName());
 				session.setAttribute("role", customer.getRole());
+				session.removeAttribute("loginRequired");
 				return "/views/loginSuccess.jsp";
 			} else {
 				return "/views/login.jsp";
@@ -63,7 +64,7 @@ public class LoginController {
 
 		return "views\\signUpConfirm.jsp";
 	}
-	
+
 	@PostMapping("/logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response) {
 		request.getSession().removeAttribute("userName");

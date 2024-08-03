@@ -13,7 +13,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan(basePackages = "com.greenwardrobe.entities")
 @EnableJpaRepositories("com.greenwardrobe.repositories")
 public class GreenWardrobeApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(GreenWardrobeApplication.class, args);
 	}
